@@ -18,12 +18,14 @@ type fulfillmentWebClient struct {
 func (client fulfillmentWebClient) getFulfillmentStatus(sku string) (status fulfillmentStatus, err error) {
 	httpclient := &http.Client{}
 
-	req, _ := http.NewRequest("GET", client.rootURL+"/"+sku, nil)
+	skuURL := fmt.Sprintf("%s/%s", client.rootURL, sku)
+	fmt.Printf("About to request SKU details from backing service: %s\n", skuURL)
+	req, _ := http.NewRequest("GET", skuURL, nil)
 
 	resp, err := httpclient.Do(req)
 
 	if err != nil {
-		fmt.Println("Errored when sending request to the server")
+		fmt.Printf("Errored when sending request to the server: %s\n", err.Error())
 		return
 	}
 
