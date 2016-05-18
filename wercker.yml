@@ -60,3 +60,14 @@ deploy:
        tag: latest
        repository: cloudnativego/backing-catalog
        registry: https://registry.hub.docker.com
+
+cloud-deploy:
+  steps:
+   - cng/cf-deploy:
+       api: $API
+       user: $USER
+       password: $PASSWORD
+       org: $ORG
+       space: $SPACE
+       appname: wercker-step-hello
+       docker_image: cloudnativego/backing-catalog
