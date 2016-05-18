@@ -1,6 +1,6 @@
 [![wercker status](https://app.wercker.com/status/fea9dadf1fd38ffc62d5f4f84489a730/m "wercker status")](https://app.wercker.com/project/bykey/fea9dadf1fd38ffc62d5f4f84489a730)
 
-# Backing Catalog
+# Backing Catalog Service
 
 Fake catalog service for the Backing Services chapter.
 
