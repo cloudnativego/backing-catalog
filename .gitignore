@@ -23,5 +23,5 @@ _testmain.go
 *.test
 *.prof
 
-backing_catalog
+backing-catalog
 vendor/*

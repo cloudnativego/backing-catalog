@@ -1,6 +1,7 @@
 package service
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/gorilla/mux"
@@ -33,7 +34,7 @@ func getCatalogItemDetailsHandler(formatter *render.Render, serviceClient fulfil
 				QuantityInStock: status.QuantityInStock,
 			})
 		} else {
-			formatter.JSON(w, http.StatusInternalServerError, err)
+			formatter.JSON(w, http.StatusInternalServerError, fmt.Sprintf("Fulfillment Client error: %s", err.Error()))
 		}
 	}
 }
