@@ -1,10 +1,10 @@
 hash: 02746aaccf099a36a6efa5fc005cea0932b5d8d562b980755f5aaffe1e54e4ed
-updated: 2016-05-18T14:01:34.245888186-04:00
+updated: 2016-05-18T16:01:55.425231233-04:00
 imports:
 - name: github.com/cloudfoundry-community/go-cfenv
   version: 18fa650ff6b7b4f6bd8f8611408d1533eb54a918
 - name: github.com/cloudnativego/cf-tools
-  version: cf008e72185887b3ce2b14d196906d07a208fca4
+  version: 3cd300eb2a0c0f4c95246cc1b8a9a390edfe1c75
 - name: github.com/codegangsta/negroni
   version: dc45282b3653ee198a3c06a82bc7847b03666497
 - name: github.com/gorilla/context

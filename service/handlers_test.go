@@ -8,7 +8,6 @@ import (
 	"testing"
 
 	"github.com/codegangsta/negroni"
-	"github.com/gorilla/mux"
 	"github.com/unrolled/render"
 )
 
@@ -61,12 +60,8 @@ func TestGetDetailsForCatalogItemReturnsProperData(t *testing.T) {
 }
 
 func MakeTestServer() *negroni.Negroni {
-	server := negroni.New() // don't need all the middleware here or logging.
-	mx := mux.NewRouter()
 	fakeClient := fakeWebClient{}
-	initRoutes(mx, formatter, fakeClient)
-	server.UseHandler(mx)
-	return server
+	return NewServerFromClient(fakeClient)
 }
 
 type fakeWebClient struct{}
