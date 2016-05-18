@@ -41,6 +41,12 @@ func getCatalogItemDetailsHandler(formatter *render.Render, serviceClient fulfil
 	}
 }
 
+func rootHandler(formatter *render.Render) http.HandlerFunc {
+	return func(w http.ResponseWriter, req *http.Request) {
+		formatter.Text(w, http.StatusOK, "Catalog Service, see http://github.com/cloudnativego/backing-catalog for API.")
+	}
+}
+
 func fakeItem(sku string) (item catalogItem) {
 	item.SKU = sku
 	item.Description = "This is a fake product"

@@ -43,6 +43,7 @@ func NewServerFromClient(webClient fulfillmentClient) *negroni.Negroni {
 }
 
 func initRoutes(mx *mux.Router, formatter *render.Render, webClient fulfillmentClient) {
+	mx.HandleFunc("/", rootHandler(formatter)).Methods("GET")
 	mx.HandleFunc("/catalog", getAllCatalogItemsHandler(formatter)).Methods("GET")
 	mx.HandleFunc("/catalog/{sku}", getCatalogItemDetailsHandler(formatter, webClient)).Methods("GET")
 }
