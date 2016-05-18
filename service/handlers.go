@@ -12,6 +12,8 @@ import (
 func getAllCatalogItemsHandler(formatter *render.Render) http.HandlerFunc {
 	return func(w http.ResponseWriter, req *http.Request) {
 		catalog := make([]catalogItem, 2)
+		catalog[0] = fakeItem("ABC1234")
+		catalog[1] = fakeItem("STAPLER99")
 		formatter.JSON(w, http.StatusOK, catalog)
 	}
 }
@@ -37,4 +39,13 @@ func getCatalogItemDetailsHandler(formatter *render.Render, serviceClient fulfil
 			formatter.JSON(w, http.StatusInternalServerError, fmt.Sprintf("Fulfillment Client error: %s", err.Error()))
 		}
 	}
+}
+
+func fakeItem(sku string) (item catalogItem) {
+	item.SKU = sku
+	item.Description = "This is a fake product"
+	item.Price = 1599
+	item.QuantityInStock = 75
+	item.ShipsWithin = 14
+	return
 }
