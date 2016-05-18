@@ -1,0 +1,7 @@
+package: github.com/cloudnativego/backing-catalog
+import:
+- package: github.com/cloudfoundry-community/go-cfenv
+- package: github.com/cloudnativego/cf-tools
+- package: github.com/codegangsta/negroni
+- package: github.com/gorilla/mux
+- package: github.com/unrolled/render
